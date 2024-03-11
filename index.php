@@ -19,7 +19,8 @@
                 <a class="navbar-brand" href="index.php">Cat Carousel</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+                    <button onclick=<? $name = $_POST["voucher"];
+                    $url="http://website.com/promotions/" . $name;?></button>
                 </div>
             </div>
         </nav>
