@@ -1,6 +1,8 @@
 <body>
 <p>
 <?php
+    echo "Simple Fibonacci Sequence" ;
+
     $c = 0 ;
     $a = 0 ;
 
