@@ -1,7 +1,7 @@
 <body>
 <p>
 <?php
-    echo "Simple Fibonacci Sequence" ;
+    echo "Simple Fibonacci Sequence<br>" ;
 
     $c = 0 ;
     $a = 0 ;
