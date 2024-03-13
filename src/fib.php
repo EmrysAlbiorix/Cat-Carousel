@@ -43,6 +43,8 @@ $(document).ready(function(){
 <p>
 <?php
 if(isset($_GET["howmanyinput"])) {
+    echo "Simple Fibonacci Sequence<br>" ;
+
     $c = 0 ;
     $a = 0 ;
 
