@@ -9,10 +9,11 @@ function getCatInfo($breedId) {
 // Handle breed selection change
 
 function getImg($info) {
-    $res = "";
+    $res = '<div style="height:650px">';
 
-    $res .= '<img src="' . $info['url'] . '" alt="cat"></img>';
+    $res .= '<img src="' . $info['url'] . '" alt="cat" style="max-width: 100%; height: auto;"></img>';
 
+    $res .= '</div>';
 
     return $res;
 }
