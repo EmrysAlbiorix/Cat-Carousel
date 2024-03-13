@@ -26,7 +26,11 @@
         <!-- Page content-->
         <div class="container mt-5">
 
-        
+        <?php
+            $form = getSelectMenu();
+
+            echo $form ;
+        ?>
 
 
 

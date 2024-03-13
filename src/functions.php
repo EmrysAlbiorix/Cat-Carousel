@@ -4,5 +4,20 @@ session_start(); /* this allows you to save data in $_SESSION */
 
 /* write PHP functions here */
 
+function getSelectMenu() {
+    $form = "<form action = 'carousel.php' method = 'get'" ;
+
+    $form.= '<select class="catBreed" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+             </select>' ;
+
+    $form.= '<button class="btn btn-primary" type="submit">Button</button>' ;
+
+    $form.= "</form>" ;
+    return $form ;
+}
 
 ?>
