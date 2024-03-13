@@ -22,7 +22,7 @@ function getSelectMenu()
     endforeach;
     $form .= '</select>';
 
-    $form .= ' <button class="btn btn-primary" type="submit">Button</button>';
+    $form .= ' <button class="btn btn-primary" type="submit">Get Photo</button>';
 
     $form .= " </form>";
 
