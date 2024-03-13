@@ -28,7 +28,6 @@
         </nav>
         <!-- Page content-->
         <div class="container mt-5">
-        <a href="./index.php">Go again!</a>
         <?php include 'src/cat.php'; ?>
 
 
