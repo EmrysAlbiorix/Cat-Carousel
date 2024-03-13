@@ -26,6 +26,8 @@
         </div>
     </div>
 </nav>
+<?php include 'src/functions.php'; ?>
+
 <!-- Page content-->
 <div class="container mt-5">
 
