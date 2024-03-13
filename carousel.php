@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,8 +10,10 @@
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
-   rel="stylesheet" crossorigin="anonymous"
-   integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3">
+            rel="stylesheet" crossorigin="anonymous"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        >
+
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -25,10 +28,8 @@
         </nav>
         <!-- Page content-->
         <div class="container mt-5">
-
-        
-
-
+        <a href="./index.php">Go again!</a>
+        <?php include 'src/cat.php'; ?>
 
 
         </div>

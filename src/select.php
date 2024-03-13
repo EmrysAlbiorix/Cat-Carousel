@@ -16,13 +16,15 @@ function getSelectMenu()
 
     $form .= "<form action = 'carousel.php' method = 'get'>";
 
-    $form .= '<select name="catBreeds" class="form-select" aria-label="Default select example">';
+    $form .= '<select name="catBreeds" class="form-select" aria-label="Default select example" style="display:flex">';
     foreach ($catBreeds as $breed):
         $form .= '<option value="' . $breed['id'] . '">' . $breed['name'] . '</option>';
     endforeach;
     $form .= '</select>';
 
-    $form .= '</form> <button name="Button" class="btn btn-primary" type="submit">Button</button>';
+    $form .= ' <button class="btn btn-primary" type="submit">Button</button>';
+
+    $form .= " </form>";
 
     $form .= " </div>";
 
@@ -30,3 +32,4 @@ function getSelectMenu()
 }
 
 ?>
+
