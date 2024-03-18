@@ -23,7 +23,8 @@
                 <a class="navbar-brand" href="index.php">Cat Carousel</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
+                    <span style="color:#FFFFFF">Subpages: </span>
+                    <a href="src/fib.php?howmany=20">Fibonacci</a>
                 </div>
             </div>
         </nav>
