@@ -28,17 +28,14 @@
                 </div>
             </div>
         </nav>
+
         <!-- Page content-->
         <div class="container mt-5">
-
         <?php
             $form = getSelectMenu();
 
             echo $form ;
         ?>
-
-
-
 
         </div>
         <!-- Bootstrap core JS-->
