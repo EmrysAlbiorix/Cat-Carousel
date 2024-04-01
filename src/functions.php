@@ -1,39 +1,61 @@
 <?php
+//phpinfo();
 session_start(); /* this allows you to save data in $_SESSION */
-/* https://www.w3schools.com/php/php_sessions.asp */
 
-/* write PHP functions here */
+function getCatBreeds()
+{
+    $url = "https://api.thecatapi.com/v1/breeds";
+    $response = file_get_contents($url);
+    return json_decode($response, true);
+}
 
-function getSelectMenu() {
-    $url = "https://api.thecatapi.com/v1/breeds" ;
+function getSelectMenu()
+{
+    $catBreeds = getCatBreeds();
 
-    $response = file_get_contents($url) ;
-    $json = json_decode($response) ;
+    $form = '<div style="display:flex">';
 
-    $first = $json[0] ;
-    $id = $first->id ;
-    $name = $first->name ;
+    $form .= "<form action = 'carousel.php' method = 'get'>";
 
-    $form = "<form action = 'carousel.php' method = 'get'>" ;
-
-    $form .= '<select name="catBreeds" class="form-select" aria-label="Default select example">
-                <option selected>Open this select menu</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>';
-
-    foreach ($json as $cat) {
-        $id = $cat['id'];
-        $name = $cat['name'];
-        $form .= "<option value='$id'>$name</option>";
-    }
-
+    $form .= '<select name="catBreeds" class="form-select" aria-label="Default select example" style="display:flex">';
+    foreach ($catBreeds as $breed):
+        $form .= '<option value="' . $breed['id'] . '">' . $breed['name'] . '</option>';
+    endforeach;
     $form .= '</select>';
 
-    $form.= '<button name="Button" class="btn btn-primary" type="submit">Button</button>' ;
+    $form .= ' <button class="btn btn-primary" type="submit">Get Photo</button>';
 
-    $form.= "</form>" ;
-    return $form ;
+    $form .= " </form>";
+
+    $form .= " </div>";
+
+    return $form;
+}
+
+// Function to fetch cat information based on breed ID from Cat API
+function getCatInfo($breedId) {
+    $url = "https://api.thecatapi.com/v1/images/search?breed_ids=" . $breedId;
+    $response = file_get_contents($url);
+    return json_decode($response, true)[0];
+}
+// Handle breed selection change
+
+function getImg($info) {
+    $res = '<div style="height:650px">';
+
+    $res .= '<img src="' . $info['url'] . '" alt="cat" style="max-width: 100%; height: auto;"></img>';
+
+    $res .= '</div>';
+
+    return $res;
+}
+
+if(isset($_GET['catBreeds'])) {
+    $breedId = $_GET['catBreeds'];
+    $catInfo = getCatInfo($breedId);
+//    echo json_encode($catInfo);
+    echo getImg($catInfo);
+    exit();
 }
 
 ?>
