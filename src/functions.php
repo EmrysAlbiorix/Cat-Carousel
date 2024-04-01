@@ -2,32 +2,30 @@
 //phpinfo();
 session_start(); /* this allows you to save data in $_SESSION */
 
-function getCatBreeds()
-{
+function getCatBreeds() {
     $url = "https://api.thecatapi.com/v1/breeds";
     $response = file_get_contents($url);
     return json_decode($response, true);
 }
 
-function getSelectMenu()
-{
+function getSelectMenu() {
     $catBreeds = getCatBreeds();
 
     $form = '<div style="display:flex">';
 
-    $form .= "<form action = 'carousel.php' method = 'get'>";
+    $form .= '<form action="src/carousel.php" method="get" style="display:flex; width: 100%">';
 
-    $form .= '<select name="catBreeds" class="form-select" aria-label="Default select example" style="display:flex">';
+    $form .= '<select name="catBreeds" class="form-select" aria-label="Default select example" style="width: calc(75% - 10px); margin-right: 10px; font-size: 20px;">';
     foreach ($catBreeds as $breed):
         $form .= '<option value="' . $breed['id'] . '">' . $breed['name'] . '</option>';
     endforeach;
     $form .= '</select>';
 
-    $form .= ' <button class="btn btn-primary" type="submit">Get Photo</button>';
+    $form .= '<button class="btn btn-primary" type="submit">Select</button>';
 
-    $form .= " </form>";
+    $form .= '</form>';
 
-    $form .= " </div>";
+    $form .= '</div>';
 
     return $form;
 }
@@ -53,7 +51,19 @@ function getImg($info) {
 if(isset($_GET['catBreeds'])) {
     $breedId = $_GET['catBreeds'];
     $catInfo = getCatInfo($breedId);
-//    echo json_encode($catInfo);
+
+    // Fetch the breed name from the $catBreeds array
+    $breedName = "";
+    $catBreeds = getCatBreeds();
+    foreach ($catBreeds as $breed) {
+        if ($breed['id'] == $breedId) {
+            $breedName = $breed['name'];
+            break;
+        }
+    }
+
+    // Output the breed name in the header
+    echo '<header style="font-weight: bold; font-size: 24px;">' . $breedName . '</header>';
     echo getImg($catInfo);
     exit();
 }
