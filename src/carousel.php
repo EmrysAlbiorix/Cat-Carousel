@@ -8,7 +8,7 @@
         <title>Cat Carousel</title>
 
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
    rel="stylesheet" crossorigin="anonymous"
    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3">
     </head>
@@ -25,12 +25,7 @@
         </nav>
         <!-- Page content-->
         <div class="container mt-5">
-
-        
-
-
-
-
+            <?php include 'src/functions.php'; ?>
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
